@@ -1,25 +1,28 @@
-# Géométrie numérique, spring 2017
-Welcome to the github repository of the course *Géométrie numérique* 2017.  
+# Géométrie numérique, spring 2020
+Welcome to the git repository of the course *Géométrie numérique* 2020.  
 See [course website](https://tiborstanko.sk/teaching/geo-num-2017/) for more details.
+
+This repo started with a duplication from https://github.com/GeoNumTP/GeoNum2017 by Tibor Stanko.
+It is now mantained by Sergi Pujades.
 
 ## Quickstart
 ```bash
 cd your/working/dir/
-git clone https://github.com/GeoNumTP/GeoNum2017.git
-cd GeoNum2017
+git clone https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020.git
+cd geonum2020
 python TP1/tp1.py
 ```
 
 ## Syllabus
-1. Bézier curves | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp1.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP1#tp1--bézier-curves-de-casteljaus-algorithm)  
-1. Bézier splines | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp2.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP2#tp2--bézier-splines-ck-smoothness)  
-1. B-splines | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp3.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP3#tp3--b-splines-de-boors-algorithm)  
-1. Subdivision curves | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp4.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP4#tp4--subdivision-curves)  
-1. Lane-Riesenfeld | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp5.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP5#tp5--lane-riesenfeld-algorithm) 
-1. Bézier surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp6.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP6#tp6--bezier-surfaces)
-1. B-spline surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp7.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP7#tp7--b-spline-surfaces)
-1. Subdivision B-surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp8.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP8#tp8--uniform-b-splines-as-subdivision-surfaces)
-1. Triangle mesh subdivision | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp9.html) | [code](https://github.com/GeoNumTP/GeoNum2017/tree/master/TP9#tp9--subdivision-surfaces-on-triangle-meshes)
+1. Bézier curves | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp1.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP1#tp1--bézier-curves-de-casteljaus-algorithm)  
+1. Bézier splines | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp2.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP2#tp2--bézier-splines-ck-smoothness)  
+1. B-splines | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp3.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP3#tp3--b-splines-de-boors-algorithm)  
+1. Subdivision curves | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp4.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP4#tp4--subdivision-curves)  
+1. Lane-Riesenfeld | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp5.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP5#tp5--lane-riesenfeld-algorithm) 
+1. Bézier surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp6.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP6#tp6--bezier-surfaces)
+1. B-spline surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp7.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP7#tp7--b-spline-surfaces)
+1. Subdivision B-surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp8.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP8#tp8--uniform-b-splines-as-subdivision-surfaces)
+1. Triangle mesh subdivision | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp9.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP9#tp9--subdivision-surfaces-on-triangle-meshes)
 
 ## Resources
 * [Learn Python in 10 minutes](https://www.stavros.io/tutorials/python/)
@@ -30,7 +33,7 @@ python TP1/tp1.py
 * [Matplotlib.pyplot](http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.plot)
 
 ## Python
-If you have no prior experience with Python whatsoever, I suggest the tutorial
+If you have no prior experience with Python whatsoever, please check the tutorial
 [Learn Python in 10 minutes](https://www.stavros.io/tutorials/python/) by Stavros Korokithakis.
 For longer and more complete references, see the [Fast Lane to Python](http://heather.cs.ucdavis.edu/~matloff/Python/PLN/FastLanePython.pdf) by Norm Matloff and, of course, the [official Python 2.7 tutorial](https://docs.python.org/2.7/tutorial/).
 
