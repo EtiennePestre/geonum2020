@@ -2,13 +2,14 @@
 In this TP, you'll implement the De Casteljau’s algorithm, and you'll use it to compute and visualise the curves in the `data` folder. Start by cloning the repo and testing the code for the TP1.
 ```bash
 cd your/working/dir/
-git clone https://github.com/GeoNumTP/GeoNum2017.git
-cd GeoNum2017/TP1
+git clone https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020.git
+cd geonum2020/TP1
 python tp1.py
 ```
 You should see something like the following figure.
 
 <img alt="simple Bezier control polygon" src="https://raw.githubusercontent.com/GeoNumTP/GeoNum2017/master/_assets/simple.png" width="500">
+
 
 To test with different datasets and sampling densities, you can pass the arguments directly in the command line.
 ```bash
