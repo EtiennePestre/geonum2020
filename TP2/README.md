@@ -8,6 +8,7 @@ git pull
 or, if you don't have the local repo
 ```bash
 git clone https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020.git
+cd geonum2020/
 ```
 Then
 ```
