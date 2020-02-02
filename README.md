@@ -1,6 +1,10 @@
 # Géométrie numérique, spring 2020
 Welcome to the git repository of the course *Géométrie numérique* 2020.  
-See [course website](https://tiborstanko.sk/teaching/geo-num-2017/) for more details.
+
+[//]  <> See [course website](https://tiborstanko.sk/teaching/geo-num-2017/) for more details.
+See [course website](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum2020-pages/) for more details.
+
+
 
 This repo started with a duplication from https://github.com/GeoNumTP/GeoNum2017 by Tibor Stanko.
 It is now mantained by Sergi Pujades.
