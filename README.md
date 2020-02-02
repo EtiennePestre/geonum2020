@@ -1,9 +1,7 @@
 # Géométrie numérique, spring 2020
 Welcome to the git repository of the course *Géométrie numérique* 2020.  
 
-[//]  <> See [course website](https://tiborstanko.sk/teaching/geo-num-2017/) for more details.
 See [course website](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum2020-pages/) for more details.
-
 
 
 This repo started with a duplication from https://github.com/GeoNumTP/GeoNum2017 by Tibor Stanko.
@@ -18,15 +16,15 @@ python TP1/tp1.py
 ```
 
 ## Syllabus
-1. Bézier curves | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp1.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP1#tp1--bézier-curves-de-casteljaus-algorithm)  
-1. Bézier splines | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp2.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP2#tp2--bézier-splines-ck-smoothness)  
-1. B-splines | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp3.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP3#tp3--b-splines-de-boors-algorithm)  
-1. Subdivision curves | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp4.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP4#tp4--subdivision-curves)  
-1. Lane-Riesenfeld | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp5.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP5#tp5--lane-riesenfeld-algorithm) 
-1. Bézier surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp6.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP6#tp6--bezier-surfaces)
-1. B-spline surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp7.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP7#tp7--b-spline-surfaces)
-1. Subdivision B-surfaces | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp8.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP8#tp8--uniform-b-splines-as-subdivision-surfaces)
-1. Triangle mesh subdivision | [theory](https://tiborstanko.sk/teaching/geo-num-2017/tp9.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP9#tp9--subdivision-surfaces-on-triangle-meshes)
+1. Bézier curves | [theory](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum2020-pages/tp1.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP1#tp1--bézier-curves-de-casteljaus-algorithm)  
+1. Bézier splines | [theory](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum2020-pages/tp2.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP2#tp2--bézier-splines-ck-smoothness)  
+1. B-splines | [theory](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum2020-pages/tp3.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP3#tp3--b-splines-de-boors-algorithm)  
+1. Subdivision curves | [theory](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum2020-pages/tp4.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP4#tp4--subdivision-curves)  
+1. Lane-Riesenfeld | [theory](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum2020-pages/tp5.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP5#tp5--lane-riesenfeld-algorithm) 
+1. Bézier surfaces | [theory](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum2020-pages/tp6.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP6#tp6--bezier-surfaces)
+1. B-spline surfaces | [theory](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum2020-pages/tp7.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP7#tp7--b-spline-surfaces)
+1. Subdivision B-surfaces | [theory](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum2020-pages/tp8.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP8#tp8--uniform-b-splines-as-subdivision-surfaces)
+1. Triangle mesh subdivision | [theory](https://geonum.gricad-pages.univ-grenoble-alpes.fr/geonum2020-pages/tp9.html) | [code](https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020/tree/master/TP9#tp9--subdivision-surfaces-on-triangle-meshes)
 
 ## Resources
 * [Learn Python in 10 minutes](https://www.stavros.io/tutorials/python/)
