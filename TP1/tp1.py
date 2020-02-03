@@ -163,19 +163,16 @@ if __name__ == "__main__":
         ## TODO : Compute intermediate polygons b_i^k for k=1,...,degree-1 and i=0,...,degree-k
         #########
         
-        
-        for k in range(0,len(BezierPts)-1):
+        inter=np.zeros([(len(BezierPts)),(len(BezierPts)),2])
+        for k in range(0,len(BezierPts)):
             for i in range(0,(len(BezierPts))-k):
-                print(k)
-                print(i)
-                print(DeCasteljau( BezierPts, k, i, 0.5 ))
-                tmp =DeCasteljau( BezierPts, k, i, 0.5 );
-                
-                plt.plot( tmp[0], tmp[1], 'r-' )
-        
+                inter[k][i]=DeCasteljau( BezierPts, k, i, 0.5 )
         
         #########
         ## TODO : Add plt.plot commands to plot the intermediate polygons
         #########
-        
+        color=['go-','yo-','co-','ko-']
+        for k in range(1,len(BezierPts)):
+            plt.plot( inter[k,:len(BezierPts)-k,0], inter[k,:len(BezierPts)-k,1], color[k%len(color)])
+            
         plt.show()
