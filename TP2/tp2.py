@@ -110,6 +110,13 @@ def ComputeSplineC1( DataPts ) :
     ##
     ## TODO : Compute BezierPts.
     ##
+    BezierPts[0]=DataPts[0]
+    BezierPts[1]=(DataPts[1]+DataPts[0])/2#+[0.5,5]
+    for i in range(1,n):
+        BezierPts[i*2]=DataPts[i]
+        BezierPts[i*2+1]=2*DataPts[i]-BezierPts[2*i-1]
+    
+    BezierPts[n*2]=DataPts[n]
          
     return BezierPts
 
@@ -160,6 +167,35 @@ def ComputeSplineC2( DataPts ) :
     ##
     ## TODO : Put DataPts to the first (n+1) rows of R.
     ##
+    for i in range(0,n+1):
+        M[i,i*3]=1
+        
+    for i in range(n+1,2*n):
+        M[i,(i%n)*3-1]=1
+        M[i,(i%n)*3]=-2
+        M[i,(i%n)*3+1]=1
+        
+    for i in range(2*n,3*n-1):
+        M[i,(i%n+1)*3-2]=1
+        M[i,(i%n+1)*3-1]=-2
+        
+        M[i,(i%n+1)*3+1]=2
+        M[i,(i%n+1)*3+2]=-1
+        
+    M[3*n-1,0]=1
+    M[3*n-1,1]=-2
+    M[3*n-1,2]=1
+    
+    M[3*n,3*n-2]=1
+    M[3*n,3*n-1]=-2
+    M[3*n,3*n]=1
+    
+    for i in range(n+1):
+        R[i]=DataPts[i]
+        
+        
+        
+    print (M)
     
     # return the solution
     return np.linalg.solve(M, R)    
@@ -217,11 +253,25 @@ if __name__ == "__main__":
             ##        - for a cubic segment (C2 spline), you need 4 control points.
             ##
             ##        When it's done, uncomment the following code to compute and plot the segment.
+            if c2:
+                iBezierPts=np.zeros([4,2])
+                iBezierPts[0]=BezierPts[i*3]
+                iBezierPts[1]=BezierPts[i*3+1]
+                iBezierPts[2]=BezierPts[i*3+2]
+                iBezierPts[3]=BezierPts[i*3+3]
+                #pass
+                CurvePts = BezierCurve( iBezierPts, density )
+                plt.plot( CurvePts[:,0], CurvePts[:,1], '-', linewidth=3 )
+            else:
+                iBezierPts=np.zeros([3,2])
+                iBezierPts[0]=BezierPts[i*2]
+                iBezierPts[1]=BezierPts[i*2+1]
+                iBezierPts[2]=BezierPts[i*2+2]
+                #pass
+                CurvePts = BezierCurve( iBezierPts, density )
+                plt.plot( CurvePts[:,0], CurvePts[:,1], '-', linewidth=3 )
             ##
             
-            pass
-            #CurvePts = BezierCurve( iBezierPts, density )
-            #plt.plot( CurvePts[:,0], CurvePts[:,1], '-', linewidth=3 )
 
 
         # plot the datapoints
