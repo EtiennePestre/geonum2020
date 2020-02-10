@@ -144,6 +144,7 @@ if __name__ == "__main__":
         fig = plt.gcf()
         fig.canvas.set_window_title('TP1 Bezier curves')
         plt.title(dataname+', '+str(density)+" pts")
+        plt.title("0.9")
         
         # set axes with equal proportions
         plt.axis('equal')
@@ -166,13 +167,14 @@ if __name__ == "__main__":
         inter=np.zeros([(len(BezierPts)),(len(BezierPts)),2])
         for k in range(0,len(BezierPts)):
             for i in range(0,(len(BezierPts))-k):
-                inter[k][i]=DeCasteljau( BezierPts, k, i, 0.5 )
+                inter[k][i]=DeCasteljau( BezierPts, k, i, 0.9)
         
         #########
         ## TODO : Add plt.plot commands to plot the intermediate polygons
         #########
+
+
         color=['go-','yo-','co-','ko-']
         for k in range(1,len(BezierPts)):
             plt.plot( inter[k,:len(BezierPts)-k,0], inter[k,:len(BezierPts)-k,1], color[k%len(color)])
-        
         plt.show()
