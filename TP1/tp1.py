@@ -130,8 +130,8 @@ if __name__ == "__main__":
     
     # check if valid datafile
     if not os.path.isfile(filename) :
-        print "error:  invalid dataname '" + dataname + "'"
-        print "usage:  python tp1.py  [simple,infinity,spiral]  [sampling_density]"
+        print ("error:  invalid dataname '" + dataname + "'")
+        print ("usage:  python tp1.py  [simple,infinity,spiral]  [sampling_density]")
         
     else :    
         # read control points
