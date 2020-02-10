@@ -157,7 +157,7 @@ if __name__ == "__main__":
         #########
         ## TODO : Uncomment if you want to save the render as png image in the data/ dir
         #########
-        #plt.savefig( DATADIR + dataname + ".png" )
+        plt.savefig( DATADIR + dataname + ".png" )
         
         #########
         ## TODO : Compute intermediate polygons b_i^k for k=1,...,degree-1 and i=0,...,degree-k
@@ -174,5 +174,5 @@ if __name__ == "__main__":
         color=['go-','yo-','co-','ko-']
         for k in range(1,len(BezierPts)):
             plt.plot( inter[k,:len(BezierPts)-k,0], inter[k,:len(BezierPts)-k,1], color[k%len(color)])
-            
+        
         plt.show()
