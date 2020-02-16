@@ -28,7 +28,6 @@ Execute the following commands:
 
 This will download and compile `PyOpenGL`, `PyGLFW` and `GLFW` (as a static library).
 The `libglfw.so*` files are automatically copied to repo's root dir.
-For the viewer to function properly, **python scripts need to be executed from the root dir**.
 
 Moreover, the $PYTHONPATH needs to be set up everytime you open the terminal by executing `exportPath.sh` preceded by the dot.
 ```bash
@@ -45,10 +44,10 @@ Afterwards, you can test the viewer with
 python viewer/viewer.py
 ```
 
-For the TP6, you can pass datanames and density directly as command line args:
+For the TP6, you can pass datanames and density directly as command line args.
+For the viewer to function properly, **python scripts need to be executed from the root dir**.
 ```bash
-cd TP6
-python tp6.py  [simple,wave,sphere,heart,teapot,teacup,teaspoon]  [density=10]
+python TP6/tp6.py  [simple,wave,sphere,heart,teapot,teacup,teaspoon]  [density=10]
 ```
 
 ### Alternative Viewer: Using matplotlib
