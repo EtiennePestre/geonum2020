@@ -1,7 +1,9 @@
 ## TP6 : Bezier surfaces
 
-
-Today, we start working with surfaces, which means transition from 2D to 3D. We will use OpenGL for rendering, but don’t worry if you have little or no experience with OpenGL; a wrapper class `Viewer` is provided. Adding a surface patch is as easy as calling
+Today, we start working with surfaces, which means transition from 2D to 3D. 
+We will use OpenGL for rendering, but don’t worry if you have little or no 
+experience with OpenGL; a wrapper class `Viewer` is provided. 
+Adding a surface patch is as easy as calling
 ```python
 viewer.add_patch(X,Y,Z)
 ```
@@ -17,27 +19,39 @@ git clone https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020.git
 cd geonum2020/
 ```
 
-You should now have the `TP6/` and `viewer/` folders, plus two new bash scripts: `setupPackages.sh` and `exportPath.sh`.
+You should have the `TP6/` and `viewer/` folders, plus two bash scripts: `setupPackages.sh` and `exportPath.sh`.
 Execute the following commands:
 ```bash
 # download and extract packages
-./setupPackages.sh
-# export python path
-# the extra dot in the beginning makes this change global
-. ./exportPath.sh
+. setupPackages.sh
+```
+
+This will download and compile `PyOpenGL`, `PyGLFW` and `GLFW` (as a static library).
+The `libglfw.so*` files are automatically copied to repo's root dir.
+For the viewer to function properly, **python scripts need to be executed from the root dir**.
+
+Moreover, the $PYTHONPATH needs to be set up everytime you open the terminal by executing `exportPath.sh` preceded by the dot.
+```bash
+. exportPath.sh
+```
+You can `echo` the path to see if it's been set correctly.
+```bash
+echo $PYTHONPATH
 ```
 
 Afterwards, you can test the viewer with
 ```
+# test the viewer
 python viewer/viewer.py
 ```
 
 For the TP6, you can pass datanames and density directly as command line args:
 ```bash
+cd TP6
 python tp6.py  [simple,wave,sphere,heart,teapot,teacup,teaspoon]  [density=10]
 ```
 
-### Using matplotlib
+### Alternative Viewer: Using matplotlib
 ```python
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -45,7 +59,6 @@ fig = plt.figure()
 ax = fig.add_subplot(111,projection='3d')
 ax.axis('equal')
 ax.axis('off')
-
 ...
 
 for p in range(numpatch) :
