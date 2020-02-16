@@ -11,10 +11,18 @@ cd geonum2020/
 ```
 Then
 ```bash
-cd TP7
+. exportPath.sh
+```
+Echo the `$PYTHONPATH` to verify it's been correctly set.
+```bash
+echo $PYTHONPATH
+```
+For the viewer to function properly, **python scripts need to be executed from the root dir**.
+```bash
 # test TP7
 python TP7/tp7.py
 ```
+
 ---
 
 ## Functions to modify
