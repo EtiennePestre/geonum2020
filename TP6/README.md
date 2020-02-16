@@ -1,24 +1,5 @@
 ## TP6 : Bezier surfaces
 
-### UPDATE : using matplotlib
-```python
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-fig = plt.figure()
-ax = fig.add_subplot(111,projection='3d')
-ax.axis('equal')
-ax.axis('off')
-
-...
-
-for p in range(numpatch) :
-    ...
-    ax.plot_wireframe(X, Y, Z)
-    ...
-
-plt.show()
-```
----
 
 Today, we start working with surfaces, which means transition from 2D to 3D. We will use OpenGL for rendering, but don’t worry if you have little or no experience with OpenGL; a wrapper class `Viewer` is provided. Adding a surface patch is as easy as calling
 ```python
@@ -27,13 +8,15 @@ viewer.add_patch(X,Y,Z)
 
 First, we need to setup the required python packages `PyOpenGL` and `PyGLFW`. Do
 ```bash
-cd GeoNum2017/
+cd geonum2020/
 git pull
 ```
 or, if you don't have the local repo
 ```bash
-git clone https://github.com/GeoNumTP/GeoNum2017.git
+git clone https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020.git
+cd geonum2020/
 ```
+
 You should now have the `TP6/` and `viewer/` folders, plus two new bash scripts: `setupPackages.sh` and `exportPath.sh`.
 Execute the following commands:
 ```bash
@@ -53,6 +36,26 @@ For the TP6, you can pass datanames and density directly as command line args:
 ```bash
 python tp6.py  [simple,wave,sphere,heart,teapot,teacup,teaspoon]  [density=10]
 ```
+
+### Using matplotlib
+```python
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+fig = plt.figure()
+ax = fig.add_subplot(111,projection='3d')
+ax.axis('equal')
+ax.axis('off')
+
+...
+
+for p in range(numpatch) :
+    ...
+    ax.plot_wireframe(X, Y, Z)
+    ...
+
+plt.show()
+```
+---
 
 ### Representation
 On the implementation level, the biggest difference between curves and surfaces is the representation we'll use.
