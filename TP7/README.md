@@ -1,33 +1,20 @@
 # TP7 : B-spline surfaces
 
-## Update: OpenGL
-
-The problems with OpenGL and GLFW should be resolved with the updated `setupPackages.sh` — don't forget to put the dot  `.` before the command.
 ```bash
-cd GeoNum2017/
+cd geonum2020/
 git pull
-. setupPackages.sh
 ```
-
-This will download and compile `PyOpenGL`, `PyGLFW` and `GLFW` (as a static library).
-The `libglfw.so*` files are automatically copied to repo's root dir.
-For the viewer to function properly, **python scripts need to be executed from the root dir**.
+or, if you don't have the local repo
 ```bash
-# test the viewer
-python viewer/viewer.py
+git clone https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020.git
+cd geonum2020/
+```
+Then
+```bash
+cd TP7
 # test TP7
 python TP7/tp7.py
 ```
-
-Moreover, the $PYTHONPATH needs to be set up everytime you open the terminal by executing `exportPath.sh` preceded by the dot.
-```bash
-. exportPath.sh
-```
-You can `echo` the path to see if it's been set correctly.
-```bash
-echo $PYTHONPATH
-```
-
 ---
 
 ## Functions to modify
