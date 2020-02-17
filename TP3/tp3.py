@@ -82,12 +82,23 @@ def ReadBSpline( filename, nurbs=False ) :
 #
 #
 def DeBoor( ControlPts, Knots, r, j, t ) :
-    
-    pass
-    
-    ##
-    ## TODO : Implement the De Boor algorithm.
-    ##
+    i=0
+    while i<len(Knots) and Knots[i]-t<=0 :
+        i+=1
+        
+    if not (i<len(Knots)):
+            print("Problem")
+    else:
+        if r==0:
+            return Knots[i]
+        
+        else:
+            wi=0
+            if Knots[i]<Knots[i]+j:
+                wi=(t-Knots[i])/(Knots[j+i]-Knots[i])
+            
+            return wi*DeBoor(ControlPts, Knots, r-1, j, t )+(1-wi)*DeBoor(ControlPts, Knots, r-1, j-1, t )
+        
 
     
 #-------------------------------------------------
@@ -169,10 +180,15 @@ if __name__ == "__main__":
         
             # prepare matrix of segment points
             Segment = np.zeros([density,dim])
+            tmp=np.linspace(ControlPts[j][0],ControlPts[j+1][0], num=density)
+            
         
-            ##
-            ## TODO : Perform De Boor.
-            ##
+            for i in range(0,len(Segment)):
+                Segment[i]=DeBoor( ControlPts, Knots, degree, degree, tmp[i] )
+                
+                
+            print("e");
+                
             
             # plot the segment
             plt.plot( Segment[:,0], Segment[:,1], '-',linewidth=3)
