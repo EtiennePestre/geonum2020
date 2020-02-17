@@ -2,8 +2,16 @@
 
 ## Setup
 ```bash
-cd GeoNum2017/
+cd geonum2020/
 git pull
+```
+or, if you don't have the local repo
+```bash
+git clone https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020.git
+cd geonum2020/
+```
+Then
+```bash
 . exportPath.sh
 ```
 Echo the `$PYTHONPATH` to verify it's been correctly set.

@@ -2,14 +2,23 @@
 
 ## Setup
 ```bash
-cd GeoNum2017/
+cd geonum2020/
 git pull
+```
+or, if you don't have the local repo
+```bash
+git clone https://gricad-gitlab.univ-grenoble-alpes.fr/geonum/geonum2020.git
+cd geonum2020/
+```
+Then
+```bash
 . exportPath.sh
 ```
 Echo the `$PYTHONPATH` to verify it's been correctly set.
 ```bash
 echo $PYTHONPATH
 ```
+
 For the viewer to function properly, **python scripts need to be executed from the root dir**.
 ```bash
 python TP9/tp9.py
