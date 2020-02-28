@@ -90,12 +90,14 @@ def DeBoor( ControlPts, Knots, r, j, t ) :
             print("Problem")
     else:
         if r==0:
-            return Knots[i]
+            return ControlPts[j]
         
         else:
             wi=0
-            if Knots[i]<Knots[i]+j:
-                wi=(t-Knots[i])/(Knots[j+i]-Knots[i])
+            if Knots[i]<(Knots[i]+j):
+                #print(i+len(Knots)-len(ControlPts)-r)
+                wi=(t-Knots[j])/(Knots[j+len(Knots)-len(ControlPts)-r]-Knots[j])
+                #print(wi)
             
             return wi*DeBoor(ControlPts, Knots, r-1, j, t )+(1-wi)*DeBoor(ControlPts, Knots, r-1, j-1, t )
         
@@ -172,27 +174,27 @@ if __name__ == "__main__":
         ##   Beware though : some of these segments can be degenerate! (if t_i == t_i+1)
         ##
         # loop over segments
+        #print(m-degree)
         for j in range(degree,m-degree) :
             
             ##
             ## TODO : Make sure the segment is non-degenerate.
             ##
-        
-            # prepare matrix of segment points
+            
             Segment = np.zeros([density,dim])
-            tmp=np.linspace(ControlPts[j][0],ControlPts[j+1][0], num=density)
-            
-        
-            for i in range(0,len(Segment)):
-                Segment[i]=DeBoor( ControlPts, Knots, degree, degree, tmp[i] )
-                
-                
-            print("e");
+            if not Knots[j]==Knots[j+1]:
+                # prepare matrix of segment points
+                tmp=np.linspace(Knots[j],Knots[j+1], num=density)
                 
             
-            # plot the segment
-            plt.plot( Segment[:,0], Segment[:,1], '-',linewidth=3)
-        
+                for i in range(0,len(Segment)):
+                    Segment[i]=DeBoor( ControlPts, Knots, degree, j, tmp[i] )
+                    
+                
+                # plot the segment
+                plt.plot( Segment[:,0], Segment[:,1], '-',linewidth=3)
+            else:
+                print("segment is non-degenerate")
         
         
         
