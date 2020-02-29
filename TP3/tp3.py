@@ -175,11 +175,15 @@ if __name__ == "__main__":
         ##
         # loop over segments
         #print(m-degree)
-        for j in range(degree,m-degree) :
+        if dim ==3:
+                ControlPts[:,0]*=ControlPts[:,2]
+                ControlPts[:,1]*=ControlPts[:,2]
+        for j in range(degree,m-degree):
             
             ##
             ## TODO : Make sure the segment is non-degenerate.
             ##
+            
             
             Segment = np.zeros([density,dim])
             if not Knots[j]==Knots[j+1]:
@@ -191,6 +195,10 @@ if __name__ == "__main__":
                     Segment[i]=DeBoor( ControlPts, Knots, degree, j, tmp[i] )
                     
                 
+                if dim ==3:
+                    Segment[:,0]/=Segment[:,2]
+                    Segment[:,1]/=Segment[:,2]
+                    
                 # plot the segment
                 plt.plot( Segment[:,0], Segment[:,1], '-',linewidth=3)
             else:
