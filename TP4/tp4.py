@@ -54,23 +54,23 @@ def ReadDatapoints( filename ) :
 # subdivision scheme for a closed polygon.
 #
 # Input
-#    X0 :  n x 2 matrix, represents a polygon
+#    X0 :  n matrix, represents a polygon
 #
 # Output
 #    X1 :  n x 2 matrix, subdivided polygon
 #
 def Chaikin( X0 ) :
-    
     # number of points
     n = X0.shape[0]
     
+    
     # upsample
     X1 = np.zeros([2*n,2])
-
-    ##
-    ## TODO Implement Chaikin's subdivision scheme.
-    ##
-        
+    
+    for i in range(n):
+        X1[2*i]=0.75*X0[i%n]+0.25*X0[(i+1)%n]
+        X1[2*i+1]=0.25*X0[i%n]+0.75*X0[(i+1)%n]
+    print(X1)
     return X1
 
 
@@ -92,11 +92,11 @@ def CornerCutting( X0, a, b ) :
     n = X0.shape[0]
     
     # upsample
-    X1 = np.zeros([2*n,2])        
-
-    ##
-    ## TODO Implement Corner cutting scheme.
-    ##
+    X1 = np.zeros([2*n,2])
+    
+    for i in range(n):
+        X1[2*i]=(1-a)*X0[i%n]+a*X0[(i+1)%n]
+        X1[2*i+1]=(1-b)*X0[i%n]+b*X0[(i+1)%n]
     
     return X1
 
@@ -125,6 +125,9 @@ def FourPoint( X0, w ) :
     ## TODO Implement Four-point scheme.
     ##
     
+    for i in range(n):
+        X1[2*i]=X0[i%n]
+        X1[2*i+1]=X0[(i-1)%n]*(-w)+X0[i%n]*(0.5+w)+X0[(i+1)%n]*(0.5+w)+X0[(i+2)%n]*(-w)
     return X1
 
 
@@ -184,7 +187,14 @@ if __name__ == "__main__":
         ##
         ## -- Corner cutting
         a = 0.2
-        b = 0.8
+        b = a+0.5
+        """
+        0.5 ok
+        
+        ]0;0.5] ok
+        
+        ]-inf;0] et [1;inf[ fractal
+        """
         ## -- Generalized four-point
         w = 0.05
         
