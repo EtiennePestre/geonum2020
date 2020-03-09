@@ -73,11 +73,14 @@ def LaneRiesenfeld(X0,degree) :
     
     # upsample
     X1 = np.zeros([2*n,2])
+    
+    for i in range(2*n):
+        X1[i]=X0[i/2]
         
-    ##
-    ## TODO Implement the Lane-Riesenfeld algorithm.
-    ##
-
+    for k in range(degree):
+        for i in range(n*2):
+            X1[i%(2*n)]=0.5*X1[i%(2*n)]+0.5*X1[(i+1)%(2*n)]
+            
     return X1
 
 
@@ -107,10 +110,18 @@ def FourPoint(X0,degree) :
     
     # upsample
     X1 = np.zeros([2*n,2])
+    Xtmp = np.zeros([2*n,2])
     
-    ##
-    ## TODO Implement the 4-point LR scheme.
-    ##
+    for i in range(n):
+        X1[2*i]=X0[i]
+        X1[2*i+1]=(1.0)/(16.0)*(-X0[(i-1)%n]+9*X0[(i)%n]+9*X0[(i+1)%n]-X0[(i+2)%n])
+        
+    for k in range(degree):
+        for i in range(n*2):
+            Xtmp[i%(2*n)]=(1.0/16.0)*(-X1[(i-1)%(2*n)]+9*X1[(i)%(2*n)]+9*X1[(i+1)%(2*n)]-X1[(i+2)%(2*n)]).copy()
+            
+        X1=Xtmp.copy()
+    
     
     return X1
 
@@ -142,9 +153,18 @@ def SixPoint(X0,degree) :
     # upsample
     X1 = np.zeros([2*n,2])
     
-    ##
-    ## TODO Implement the 6-point LR scheme.
-    ##
+    X1 = np.zeros([2*n,2])
+    Xtmp = np.zeros([2*n,2])
+    
+    for i in range(n):
+        X1[2*i]=X0[i]
+        X1[2*i+1]=(1.0)/(256.0)*(3*X0[(i-2)%n]-25*X0[(i-1)%n]+150*X0[(i)%n]+150*X0[(i+1)%n]-25*X0[(i+2)%n]+3*X0[(i+3)%n])
+        
+    for k in range(degree):
+        for i in range(n*2):
+            Xtmp[i%(2*n)]=(1.0)/(256.0)*(3*X1[(i-2)%(2*n)]-25*X1[(i-1)%(2*n)]+150*X1[(i)%(2*n)]+150*X1[(i+1)%(2*n)]-25*X1[(i+2)%(2*n)]+3*X1[(i+3)%(2*n)]).copy()
+            
+        X1=Xtmp.copy()
     
     return X1
 
