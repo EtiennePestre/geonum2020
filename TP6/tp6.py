@@ -48,6 +48,11 @@ def ReadBezierMesh( datafile ) :
     return M[0,:,:], M[1,:,:], M[2,:,:]
 
 
+def DeCasteljau2(M, k, i, j, u):
+    if k == 0:
+        return M[i][j]
+    else:
+        return (1 - u) * DeCasteljau2(M, k - 1, i, j,  u) + DeCasteljau2(M, k - 1, i + 1, j, u) * u
 #-------------------------------------------------
 # DECASTELJAU( ... )
 # Compute point on a Bezier surface using the De Casteljau algorithm.
@@ -58,7 +63,8 @@ def ReadBezierMesh( datafile ) :
 #
 # Output      :  one coordinate of the surface point S(u,v)
 #
-def DeCasteljau(M,u,v) :
+
+def DeCasteljau(M,k,l,i,j,u,v) :
     
     #
     # TODO Implement the De Casteljau algorithm for surfaces.
@@ -68,8 +74,10 @@ def DeCasteljau(M,u,v) :
     # For recursive implementation, you can use
     #   def DeCasteljau(M,k,l,i,j,u,v) :
     #
-    
-    pass
+    if l == 0:
+        return DeCasteljau2(M, k, i, j, u)
+    else:
+        return (1 - v) * DeCasteljau(M, k, l - 1, i, j, u, v) + DeCasteljau(M, k, l-1, i, j + 1, u, v) * v
 
 
 #-------------------------------------------------
@@ -104,7 +112,12 @@ def BezierSurf(M,density) :
     # to generate uniform sampling of the interval [0.0,1.0], use:
     # >> u = np.linspace(0.0,1.0,num=density)
     #
-    
+
+    u = np.linspace(0.0, 1.0, num=density)
+    v = np.linspace(0.0, 1.0, num=density)
+    for i in range(density):
+        for j in range(density):
+            S[i][j] = DeCasteljau(M,m,n,0,0,u[i],v[j])
     return S
 
 

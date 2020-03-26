@@ -83,7 +83,7 @@ def ReadBSpline( filename, nurbs=False ) :
 #
 def DeBoor( ControlPts, Knots, r, j, t ) :
     i=0
-    while i<len(Knots) and Knots[i]-t<=0 :
+    while i<len(Knots) and Knots[i]-t<0 :
         i+=1
         
     if not (i<len(Knots)):
@@ -144,7 +144,10 @@ if __name__ == "__main__":
     else :    
         # read B-spline control points and knot sequence
         ControlPts, Knots = ReadBSpline(filename,nurbs)
-        
+        #Knots = np.array([0,1,2,3,4,5,6])
+        #Knots = np.array([0, 5, 10, 15, 20, 20, 20])
+        #Knots = np.array([0, 0, 0, 0, 1, 1, 1, 1 ,2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5])
+
         # (n+1) control points
         n = ControlPts.shape[0]-1
         
@@ -183,22 +186,22 @@ if __name__ == "__main__":
             ##
             ## TODO : Make sure the segment is non-degenerate.
             ##
-            
-            
+
+
             Segment = np.zeros([density,dim])
-            if not Knots[j]==Knots[j+1]:
+            if not (Knots[j]==Knots[j+1]):
                 # prepare matrix of segment points
                 tmp=np.linspace(Knots[j],Knots[j+1], num=density)
-                
-            
+
+
                 for i in range(0,len(Segment)):
                     Segment[i]=DeBoor( ControlPts, Knots, degree, j, tmp[i] )
-                    
-                
+
+
                 if dim ==3:
                     Segment[:,0]/=Segment[:,2]
                     Segment[:,1]/=Segment[:,2]
-                    
+
                 # plot the segment
                 plt.plot( Segment[:,0], Segment[:,1], '-',linewidth=3)
             else:

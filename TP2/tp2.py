@@ -111,7 +111,7 @@ def ComputeSplineC1( DataPts ) :
     ## TODO : Compute BezierPts.
     ##
     BezierPts[0]=DataPts[0]
-    BezierPts[1]=(DataPts[1]+DataPts[0])/2#+[0.5,5]
+    BezierPts[1]=(DataPts[1]+DataPts[0])/2+[1,1]
     for i in range(1,n):
         BezierPts[i*2]=DataPts[i]
         BezierPts[i*2+1]=2*DataPts[i]-BezierPts[2*i-1]
